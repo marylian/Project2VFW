@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+ <!-- Marylia Nieves VFW 1206 -May 30, 2012 Assignment 1 Add Item Page. -->
+ 	<html>
+ <!-- HTML Tag-->
+	<!--Document Head-->
+		<head>
+			<!--Meta Content-->
+			<meta charset="utf-8" />
+			<meta name="description" content= "My first assignment for VFW!" />
+			<meta name="keywords" content="html5, mobil development, Full Sail University, Teacher, Plans" />
+	   		<meta name="robots" content="index, follow" />
+	   		<meta name="viewport" content="user-scalable=no, width=device-width" />
+	    	<meta name="HandheldFriendly" content="True" />
+	    	<!--Document Title-->
+	 		 <title>Weekly Teacher Tasks</title>
+	    </head>
+		<!--Document Body-->
+		<body>
+			<h1>Weekly Teacher Tasks</h1>
+	    	<form action="#" method="post" id="taskForm" >
+	  			<fieldset id="taskDetails">
+					<legend>Add a Task</legend>
+					<ul id="taskQuestions">
+					<li><label for="weekday">Please Choose Day: </label>
+							<!--Checkbox-->
+						<ul class="checkbox">
+								<li><input	type="checkbox" unchecked value= "Monday" id="monday" class="checkbox"/><label for="monday">Monday</label></li>
+								<li><input	type="checkbox" unchecked value= "Tuesday" id="tuesday" class="checkbox" /><label for="tuesday">Tuesday</label></li>
+								<li><input	type="checkbox" unchecked value= "Wednesday" id="wednesday" class="checkbox"/><label for="wednesday">Wednesday</label></li>
+								<li><input	type="checkbox" unchecked value= "Thursday" id="thursday" class="checkbox"/><label for="thursday">Thursday</label></li>
+								<li><input	type="checkbox" unchecked value= "Friday" id="friday" class="checkbox"/><label for="friday">Friday</label></li>
+							</ul>	
+						</li>
+						<li><label for="sub">Subject: </label><input type="text" id="sub"/> <br/></li>
+						<li><label for="period">Period: </label><input type="text" id="period" /><br/></li>
+						<br>
+						<!--Range Slider-->
+						<li>
+							Age: <input type="range" value=1 name="Age" min="1" max="100" />
+						</li>
+						<br>
+						<li id="selectItem"><label for="tasks">Task Categories:</label><br/></li>
+						<!--Calendar Date-->
+						<li>
+							Due Date: <input type="date" name="Due Date" />
+						</li>
+						<br>
+						 <!--Notes-->
+						<li><label for="comments"> My Notes: </label><textarea id="comments">Type notes here.</textarea></li>
+					</ul>
+				</fieldset>
+				<!--Submit Button-->
+				<br>
+				<input type="submit" id="tasksubmit" value="Submit my task!"/>
+				<br></br>
+			</form>
+			<!--Links-->
+			<a href="url" id="clearTask">Clear Stored Data</a>
+			<a href="url" id="displayTask">Display Data</a>
+			<script type="text/javascript" src="main.js"></script>
+		 </body>
+    </html>
