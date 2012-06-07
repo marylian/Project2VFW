@@ -26,15 +26,22 @@ window.addEventListener("DOMContentLoaded", function () {
 		}
 		selectedItem.appendChild(createItem);
 	}
-	//Variable defaults
-	var taskList=[" --Choose a Task-- ", "Create Tests", "Look for Project Ideas", "Complete Lesson Plans", "Grade Papers", "Complete Paperwork", "Contact Parents", "Buy School Supplies"];
-	makeTask(); //Calling the function that was created above.
-	
 	//Set Link & Submit click events
 	function submitData(){
-			var id=Math.floor(Math.random()*53211245);
-			var task={};
-			var task.group=["Tasks", getValue('selectItem').value]
+		var id=Math.floor(Math.random()*53211245);
+		var task={};
+//		task.weekday=["Day: ", dayValue];
+		task.subject=["Subject: ", getValue('sub').value];
+		task.period=["Period: ", getValue('period').value];
+		
+		task.age=["Age: ", getValue('age').value];
+		alert("Task has been saved");
+		localStorage.setItem(id, JSON.stringify(task));
+		task.tasks=["Tasks to be performed: ", getValue('tasks').value];
+		task.date=["Due date: ", getValue('duedate').value];
+		task.comments=["Your comments: ", getValue('comments').value];
+		
+			
 	}
 	
 	/*function getData(){
@@ -46,6 +53,10 @@ window.addEventListener("DOMContentLoaded", function () {
 	
 	var clearLink=getValue('clearTask');
 	clearLink.addEventListener("click", clearData);*/
+	
+		//Variable defaults
+	var taskList=[" --Choose a Task-- ", "Create Tests", "Look for Project Ideas", "Complete Lesson Plans", "Grade Papers", "Complete Paperwork", "Contact Parents", "Buy School Supplies"];
+	makeTask(); //Calling the function that was created above.
 
 	var submitButton=getValue('tasksubmit');
 	submitButton.addEventListener("click", submitData);
