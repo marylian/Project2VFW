@@ -10,10 +10,11 @@
 			<meta name="keywords" content="html5, mobil development, Full Sail University, Teacher, Plans" />
 	   		<meta name="robots" content="index, follow" />
 	   		<meta name="viewport" content="user-scalable=no, width=device-width" />
-	    	<meta name="HandheldFriendly" content="True" />
+	    		<meta name="HandheldFriendly" content="True" />
 	    	<!--Document Title-->
-	 		 <title>Weekly Teacher Tasks</title>
-	    </head>
+	 		<title>Weekly Teacher Tasks</title>
+	 		<link rel= "stylesheet"href="style.css"/> 
+		</head>
 		<!--Document Body-->
 		<body>
 			<h1>Weekly Teacher Tasks</h1>
@@ -21,42 +22,37 @@
 	  			<fieldset id="taskDetails">
 					<legend>Add a Task</legend>
 					<ul id="taskQuestions">
-					<li><label for="weekday">Please Choose Day: </label>
-							<!--Checkbox-->
-						<ul class="checkbox">
-								<li><input	type="checkbox" unchecked value= "Monday" id="monday" class="checkbox"/><label for="monday">Monday</label></li>
-								<li><input	type="checkbox" unchecked value= "Tuesday" id="tuesday" class="checkbox" /><label for="tuesday">Tuesday</label></li>
-								<li><input	type="checkbox" unchecked value= "Wednesday" id="wednesday" class="checkbox"/><label for="wednesday">Wednesday</label></li>
-								<li><input	type="checkbox" unchecked value= "Thursday" id="thursday" class="checkbox"/><label for="thursday">Thursday</label></li>
-								<li><input	type="checkbox" unchecked value= "Friday" id="friday" class="checkbox"/><label for="friday">Friday</label></li>
+						<li><label for="weekday">Please Choose Day: </label>
+						<!--Checkbox-->
+							<ul class="checkbox">
+								<li><input	type="checkbox" unchecked value= "Monday" id="monday" name="weekday"/><label for="monday">Monday</label></li>
+								<li><input	type="checkbox" unchecked value= "Tuesday" id="tuesday" name="weekday" /><label for="tuesday">Tuesday</label></li>
+								<li><input	type="checkbox" unchecked value= "Wednesday" id="wednesday" name="weekday"/><label for="wednesday">Wednesday</label></li>
+								<li><input	type="checkbox" unchecked value= "Thursday" id="thursday" name="weekday"/><label for="thursday">Thursday</label></li>
+								<li><input	type="checkbox" unchecked value= "Friday" id="friday" name="weekday"/><label for="friday">Friday</label></li>
 							</ul>	
 						</li>
 						<li><label for="sub">Subject: </label><input type="text" id="sub"/> <br/></li>
 						<li><label for="period">Period: </label><input type="text" id="period" /><br/></li>
 						<br>
 						<!--Range Slider-->
-						<li>
-							Age: <input type="range" value=1 name="Age" min="1" max="100" />
-						</li>
+						<li><label for="age">Age: </label><input type="range" id="age" value=1 min="1" max="100"/></li>
 						<br>
-						<li id="selectItem"><label for="tasks">Task Categories:</label><br/></li>
+						<li> <select id="selectItem"><label for="tasks">Categories:</select></label><br/></li>
 						<!--Calendar Date-->
-						<li>
-							Due Date: <input type="date" name="Due Date" />
-						</li>
+						<li><label for="duedate">Due Date: </label><input type="date" id="duedate" /></li>
 						<br>
-						 <!--Notes-->
 						<li><label for="comments"> My Notes: </label><textarea id="comments">Type notes here.</textarea></li>
 					</ul>
 				</fieldset>
 				<!--Submit Button-->
 				<br>
 				<input type="submit" id="tasksubmit" value="Submit my task!"/>
-				<br></br>
+				<br>
 			</form>
 			<!--Links-->
-			<a href="#" id="clearTask">Clear Stored Data</a>
-			<a href="#" id="displayTask">Display Data</a>
+			<a href="#" id="cleartask">Clear Stored Data</a>
+			<a href="#" id="displaytask">Display Data</a>
 			<script type="text/javascript" src="main.js"></script>
 		 </body>
     </html>
