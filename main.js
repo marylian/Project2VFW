@@ -9,8 +9,8 @@ window.addEventListener("DOMContentLoaded", function () {
 		var taskData = document.getElementById(x);
 		return taskData;
 	}
-	//Create select field element and populate with options
-		
+
+	//Create select field element and populate with options		
 	function makeTask(){
 		var searchTag=document.getElementsByTagName("form"), 
 		select=getValue('selectItem'),
@@ -52,29 +52,54 @@ window.addEventListener("DOMContentLoaded", function () {
 		localStorage.setItem(id, JSON.stringify(task));
 	}
 	
+	//Writes data from localStorage to the browser
 	function getData(){
-
+		alert("get data is working");
+		var makeDiv=document.createElement('div');
+		makeDiv=setAttribute("id", "items");
+		var makeList=document.createElement('ul');
+		makeDiv.appendChild(makeList);
+		document.body.appendChild(makeDiv);
+		for(var i=0, len=localStorage.length; i<=len; i++){
+			var makeli=document.createElement('li');
+			makeList.appendChild('makeli');
+			var key=localStorage.key(i);
+			var value=localStorage.getItem(key);
+			var obj=JSON.parse(value);
+			var subUnList=document.createElement('ul');
+			makeli.appendChild(subUnList);
+			for (var x in obj){
+				var makesubli=document.createElement('li');
+				SubUnList.appendChild(makesubli);
+				var optSubText=obj[n][0]+" "+obj[n][1];
+				makeSubli.innerHTML=optSubText;
+			}
+		}
 	}
 	
-	/* var displayLink=getValue('displayTask');
+	//Clears the data from localStorage
+	function clearData(){
+		if (localStorage.length===0){
+			alert("There is no data to clear.");
+		}
+		else{
+			localStorage.clear();
+			alert("All data in localStorage has been cleared.");
+			window.location.reload();
+			return false;
+		}
+	}
+	var displayLink=getValue('displaytask');
 	displayLink.addEventListener("click", getData);
 	
-	var clearLink=getValue('clearTask');
-	clearLink.addEventListener("click", clearData);*/
+	var clearLink=getValue('cleartask');
+	clearLink.addEventListener("click", clearData);
 	
-		//Variable defaults
+	//Variable defaults
 	var taskList=[" --Choose a Task-- ", "Create Tests", "Look for Project Ideas", "Complete Lesson Plans", "Grade Papers", "Complete Paperwork", "Contact Parents", "Buy School Supplies"],
-	weekdayValue;
+	 dayValue;
 	makeTask(); //Calling the function that was created above.
 
 	var submitButton=getValue('tasksubmit');
 	submitButton.addEventListener("click", submitData);
-	
-
-	
-
-	
-	//Create select field element and populate with options.
-	
-
 });
