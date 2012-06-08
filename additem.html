@@ -12,7 +12,7 @@
 	   		<meta name="viewport" content="user-scalable=no, width=device-width" />
 	    	<meta name="HandheldFriendly" content="True" />
 	    	<!--Document Title-->
-	 		 <title>Weekly Teacher Tasks</title>
+	 		<title>Weekly Teacher Tasks</title>
 	    </head>
 		<!--Document Body-->
 		<body>
@@ -21,9 +21,9 @@
 	  			<fieldset id="taskDetails">
 					<legend>Add a Task</legend>
 					<ul id="taskQuestions">
-					<li><label for="weekday">Please Choose Day: </label>
-							<!--Checkbox-->
-						<ul class="checkbox">
+						<li><label for="weekday">Please Choose Day: </label>
+						<!--Checkbox-->
+							<ul class="checkbox">
 								<li><input	type="checkbox" unchecked value= "Monday" id="monday" name="weekday"/><label for="monday">Monday</label></li>
 								<li><input	type="checkbox" unchecked value= "Tuesday" id="tuesday" name="weekday" /><label for="tuesday">Tuesday</label></li>
 								<li><input	type="checkbox" unchecked value= "Wednesday" id="wednesday" name="weekday"/><label for="wednesday">Wednesday</label></li>
@@ -35,10 +35,9 @@
 						<li><label for="period">Period: </label><input type="text" id="period" /><br/></li>
 						<br>
 						<!--Range Slider-->
-						<li><label for="age">Age: </label><input type="range" id="age" value=1 min="1" max="100"/>
-						</li>
+						<li><label for="age">Age: </label><input type="range" id="age" value=1 min="1" max="100"/></li>
 						<br>
-						<li id="selectItem"><label for="tasks">Task Categories:</label><br/></li>
+						<li> <select id="selectItem"><label for="tasks">Categories:</select></label><br/></li>
 						<!--Calendar Date-->
 						<li><label for="duedate">Due Date: </label><input type="date" id="duedate" /></li>
 						<br>
@@ -48,11 +47,11 @@
 				<!--Submit Button-->
 				<br>
 				<input type="submit" id="tasksubmit" value="Submit my task!"/>
-				<br></br>
+				<br>
 			</form>
 			<!--Links-->
-			<a href="#" id="clearTask">Clear Stored Data</a>
-			<a href="#" id="displayTask">Display Data</a>
+			<a href="#" id="cleartask">Clear Stored Data</a>
+			<a href="#" id="displaytask">Display Data</a>
 			<script type="text/javascript" src="main.js"></script>
 		 </body>
     </html>
