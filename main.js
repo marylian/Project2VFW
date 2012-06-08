@@ -25,6 +25,9 @@ window.addEventListener("DOMContentLoaded", function () {
 		}
 		select.appendChild(createItem);
 	}
+	var taskList=[" --Choose a Task-- ", "Create Tests", "Look for Project Ideas", "Complete Lesson Plans", "Grade Papers", "Complete Paperwork", "Contact Parents", "Buy School Supplies"],
+	dayValue;
+	makeTask(); //Calling the function that was created above.
 	
 	//Find which checkbox is checked
 	function getCheckedBox(){
@@ -89,17 +92,14 @@ window.addEventListener("DOMContentLoaded", function () {
 			return false;
 		}
 	}
+	
+	var submitButton=getValue('tasksubmit');
+	submitButton.addEventListener("click", submitData);
+	
 	var displayLink=getValue('displaytask');
 	displayLink.addEventListener("click", getData);
 	
 	var clearLink=getValue('cleartask');
 	clearLink.addEventListener("click", clearData);
 	
-	//Variable defaults
-	var taskList=[" --Choose a Task-- ", "Create Tests", "Look for Project Ideas", "Complete Lesson Plans", "Grade Papers", "Complete Paperwork", "Contact Parents", "Buy School Supplies"],
-	 dayValue;
-	makeTask(); //Calling the function that was created above.
-
-	var submitButton=getValue('tasksubmit');
-	submitButton.addEventListener("click", submitData);
 });
