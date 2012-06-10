@@ -25,9 +25,6 @@ window.addEventListener("DOMContentLoaded", function () {
 		}
 		select.appendChild(createItem);
 	}
-	var taskList=[" --Choose a Task-- ", "Create Tests", "Look for Project Ideas", "Complete Lesson Plans", "Grade Papers", "Complete Paperwork", "Contact Parents", "Buy School Supplies"],
-	dayValue;
-	makeTask(); //Calling the function that was created above.
 	
 	//Find which checkbox is checked
 	function getCheckedBox(){
@@ -59,13 +56,13 @@ window.addEventListener("DOMContentLoaded", function () {
 	function getData(){
 		alert("get data is working");
 		var makeDiv=document.createElement('div');
-		makeDiv=setAttribute("id", "items");
+		makeDiv.setAttribute("id", "items");
 		var makeList=document.createElement('ul');
 		makeDiv.appendChild(makeList);
 		document.body.appendChild(makeDiv);
 		for(var i=0, len=localStorage.length; i<=len; i++){
 			var makeli=document.createElement('li');
-			makeList.appendChild('makeli');
+			makeli.appendChild('makeList');
 			var key=localStorage.key(i);
 			var value=localStorage.getItem(key);
 			var obj=JSON.parse(value);
@@ -73,9 +70,9 @@ window.addEventListener("DOMContentLoaded", function () {
 			makeli.appendChild(subUnList);
 			for (var x in obj){
 				var makesubli=document.createElement('li');
-				SubUnList.appendChild(makesubli);
-				var optSubText=obj[n][0]+" "+obj[n][1];
-				makeSubli.innerHTML=optSubText;
+				subUnList.appendChild(makesubli);
+				var optSubText=obj[x][0]+" "+obj[n][1];
+				makesubli.innerHTML=optSubText;
 			}
 		}
 	}
@@ -92,14 +89,17 @@ window.addEventListener("DOMContentLoaded", function () {
 			return false;
 		}
 	}
-	
-	var submitButton=getValue('tasksubmit');
-	submitButton.addEventListener("click", submitData);
-	
 	var displayLink=getValue('displaytask');
 	displayLink.addEventListener("click", getData);
 	
 	var clearLink=getValue('cleartask');
 	clearLink.addEventListener("click", clearData);
 	
+	//Variable defaults
+	var taskList=[" --Choose a Task-- ", "Create Tests", "Look for Project Ideas", "Complete Lesson Plans", "Grade Papers", "Complete Paperwork", "Contact Parents", "Buy School Supplies"],
+	 dayValue;
+	makeTask(); //Calling the function that was created above.
+
+	var submitButton=getValue('tasksubmit');
+	submitButton.addEventListener("click", submitData);
 });
